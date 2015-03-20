@@ -2,38 +2,19 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" media="all" href="messi.css">
-  <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
   <script src="messi.js"></script>
-  <script>
-  $(function() {
-    // New jQuery Syntax
-    $("div").messi({
-        title: "Session Expired",
-        titleClass: "anim error",
-        modal: true,
-        buttons: [{ label: "OK", val: "Y" }, { label: "No", val: "N" }],
-        callback: function (value) {
-            console.log(value);
-        }
-    });
-
-    // Legacy syntax
-    var m = new Messi("Your session has expired. Please press OK to log in again.", {
-        title: "Session Expired",
-        titleClass: "anim error",
-        modal: true,
-        buttons: [{ label: "OK", val: "Y" }, { label: "No", val: "N" }],
-        callback: function (value) {
-            console.log(value);
-        }
-    });
-  });
-
-  </script>
 </head>
 <body>
-  <div>
-    Your session has expired. Please press OK to log in again.
-  </div>
+<script>
+    var m = Messi.load("./demo.html", {
+        params: {
+            "data1": "one",
+            "data2": "two"
+        },
+        title: "Alert",
+        titleClass: "anim error",
+        modal: true
+    });
+</script>
 </body>
 </html>
